@@ -1,0 +1,26 @@
+<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="goBack()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sleep History</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card *ngFor="let data of overnightSleepData" class="sleep-card">
+    <ion-card-header>
+      <ion-card-title>{{ data.summaryString() }}</ion-card-title>
+      <ion-card-subtitle>{{ data.dateString() }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Logged At: {{ data.loggedAt | date: 'MMM d, yyyy, h:mm a' }}</p>
+      <!-- <ion-button (click)="shareData(data)" fill="outline" color="primary">
+        Share
+      </ion-button> -->
+    </ion-card-content>
+  </ion-card>
+</ion-content>

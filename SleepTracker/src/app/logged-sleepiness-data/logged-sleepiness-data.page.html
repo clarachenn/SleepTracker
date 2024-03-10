@@ -1,0 +1,23 @@
+<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="goBack()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sleepiness History</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let data of sleepinessData" class="sleepiness-card">
+    <ion-card-header>
+      <ion-card-title>{{ data.loggedAt | date: 'MMM d, yyyy' }}</ion-card-title>
+      <ion-card-subtitle>{{ data.loggedAt | date: 'h:mm a' }}</ion-card-subtitle>
+    </ion-card-header>
+ 
+    <ion-card-content>
+      <p><strong>Sleepiness:</strong> {{ data.summaryString() }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

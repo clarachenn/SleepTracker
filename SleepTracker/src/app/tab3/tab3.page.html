@@ -1,0 +1,52 @@
+<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<ion-app>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        Sleepiness
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Sleepiness</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  
+  
+    <ion-item [button]="true" (click)="viewLoggedSleepinessData()">
+      <ion-label>Sleepiness History</ion-label>
+      <ion-note slot="end">View All<ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-note>
+    </ion-item>
+  
+    <ion-card class="ion-card-margin">  
+      <ion-item class="ion-margin">  
+        <ion-label position="stacked" class="ion-header-font">Time</ion-label>
+        <ion-datetime display-format="MMM D, YYYY HH:mm" [(ngModel)]="timestamp"></ion-datetime>
+      </ion-item>
+    
+      <ion-card-content>
+        <ion-item class="ion-margin">  
+          <ion-select label="Sleepiness Level" [(ngModel)]="sleepinessLevel">
+            <ion-select-option value="1">1 - Feeling active, vital, alert, or wide awake</ion-select-option>
+            <ion-select-option value="2">2 - Functioning at a high level, but not at peak; able to concentrate</ion-select-option>
+            <ion-select-option value="3">3 - Awake, but relaxed; responsive but not fully alert</ion-select-option>
+            <ion-select-option value="4">4 - Somewhat foggy; let down</ion-select-option>
+            <ion-select-option value="5">5 - Foggy; losing interest in remaining awake; slowed down</ion-select-option>
+            <ion-select-option value="6">6 - Sleepy, woozy, fighting sleep; prefer to lie down</ion-select-option>
+            <ion-select-option value="7">7 - No longer fighting sleep; sleep onset soon; having dream-like thoughts</ion-select-option>
+          </ion-select>
+        </ion-item>
+        
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-button expand="block" (click)="logSleepinessData()" class="log-button">Log Sleepiness</ion-button>
+  </ion-content>
+  
+</ion-app>
+ 

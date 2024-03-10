@@ -1,0 +1,29 @@
+ion-item.ion-margin {
+    margin-top: 20px; 
+    margin-bottom: 40px;  
+    align-items: center;
+}
+
+ion-card.ion-card-margin {
+    margin: 40px;
+    margin-top: 20px;  
+}
+
+ion-label.ion-header-font {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(158, 184, 163);
+    color: white;
+}
+
+ion-button.log-button {
+    --background: rgb(146, 179, 137);
+    --color: white;
+}
+
+ion-button {
+    font-size: 18px;
+    margin: 40px;  
+}
