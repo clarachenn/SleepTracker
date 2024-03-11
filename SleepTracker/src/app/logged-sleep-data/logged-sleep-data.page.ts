@@ -3,6 +3,8 @@ import { OvernightSleepData } from '../data/overnight-sleep-data';
 import { NavController } from '@ionic/angular';
 import { SleepService } from '../services/sleep.service';
 import { Share } from '@capacitor/share';
+import { LocalNotifications } from '@capacitor/local-notifications';
+
 
 @Component({
   selector: 'app-logged-sleep-data',
@@ -13,7 +15,8 @@ export class LoggedSleepDataPage implements OnInit {
 
   overnightSleepData: OvernightSleepData[] = [];
 
-  constructor(private navController: NavController) {}
+  constructor(private navController: NavController) {
+  }
 
   ngOnInit() {
     this.overnightSleepData = [...SleepService.AllOvernightData];
@@ -26,7 +29,6 @@ export class LoggedSleepDataPage implements OnInit {
   async shareData(data: OvernightSleepData) {
     try {
       await Share.share({
-        title: 'Sleep Log',
         text: `Summary: ${data.summaryString()}\nDate: ${data.dateString()}`,
       });
     } catch (error) {
@@ -34,4 +36,5 @@ export class LoggedSleepDataPage implements OnInit {
     }
   }
 
+   
 }

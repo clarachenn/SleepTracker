@@ -5,6 +5,8 @@ import { SleepService } from '../services/sleep.service';
 import { AlertController } from '@ionic/angular'; 
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';  
+import { LocalNotifications } from '@capacitor/local-notifications';
+import { every } from 'rxjs';
 
  
 @Component({
@@ -23,7 +25,9 @@ export class Tab2Page {
   };
 
 
-  constructor(private sleepService: SleepService, private alertController: AlertController, private navCtrl: NavController) {}
+  constructor(private sleepService: SleepService, private alertController: AlertController, private navCtrl: NavController) {
+  }
+
 
   logSleepData() {
     if (!this.bedtime || !this.wakeupTime) {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LocalNotifications } from '@capacitor/local-notifications';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() {}
+
+  ngOnInit(): void {
+    this.scheduleReminder();
+  }
+
+  // schedule daily 11am notifications to log sleep
+  async scheduleReminder() {
+    await LocalNotifications.schedule({
+      notifications: [
+        {
+          title: "SleepTracker Reminder",
+          body: "Don't forget to log your sleep!", 
+          id: 1,
+          schedule: { on: { hour: 11, minute: 0}, allowWhileIdle: true, every: 'day' }
+        }
+      ]
+    })
+  }
 }
