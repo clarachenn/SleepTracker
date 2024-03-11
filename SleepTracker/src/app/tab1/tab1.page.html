@@ -1,17 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<ion-app>
+  <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title>
+        Dashboard
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+  <ion-content [fullscreen]="true" scroll-y="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Dashboard</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-item [button]="true" (click)="viewLoggedData()">
+      <ion-label>Sleep History</ion-label>
+      <ion-note slot="end">View All<ion-icon></ion-icon>
+      </ion-note>
+    </ion-item>
+  </ion-content>
+</ion-app>

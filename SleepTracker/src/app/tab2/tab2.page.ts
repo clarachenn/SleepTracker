@@ -5,8 +5,6 @@ import { SleepService } from '../services/sleep.service';
 import { AlertController } from '@ionic/angular'; 
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';  
-import { LocalNotifications } from '@capacitor/local-notifications';
-import { every } from 'rxjs';
 
  
 @Component({

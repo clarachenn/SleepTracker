@@ -34,4 +34,12 @@ export class SleepService {
 		SleepService.AllSleepData.push(sleepData);
 		SleepService.AllSleepinessData.push(sleepData);
 	}
+
+	public deleteOvernightData(sleepData: OvernightSleepData) {
+		const index = SleepService.AllOvernightData.indexOf(sleepData);
+		if (index !== -1) {
+		  SleepService.AllSleepData.splice(index, 1);
+		  SleepService.AllOvernightData.splice(index, 1);
+		}
+	  }
 }

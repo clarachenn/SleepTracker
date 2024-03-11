@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OvernightSleepData } from '../data/overnight-sleep-data';
-import { NavController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 import { SleepService } from '../services/sleep.service';
 import { Share } from '@capacitor/share';
 import { LocalNotifications } from '@capacitor/local-notifications';
@@ -15,8 +15,11 @@ export class LoggedSleepDataPage implements OnInit {
 
   overnightSleepData: OvernightSleepData[] = [];
 
-  constructor(private navController: NavController) {
-  }
+  constructor(private navController: NavController,
+    private alertController: AlertController,  
+    private sleepService: SleepService  
+  ) {}
+
 
   ngOnInit() {
     this.overnightSleepData = [...SleepService.AllOvernightData];
@@ -34,6 +37,30 @@ export class LoggedSleepDataPage implements OnInit {
     } catch (error) {
       console.error('Error sharing data', error);
     }
+  }
+
+  async deleteData(data: OvernightSleepData) {
+    const alert = await this.alertController.create({
+      header: 'Confirm Deletion',
+      message: 'Are you sure you want to delete this sleep log?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        },
+        {
+          text: 'Delete',
+          handler: () => {
+            // delete the data
+            this.sleepService.deleteOvernightData(data);
+            // refresh the displayed data
+            this.overnightSleepData = [...SleepService.AllOvernightData];
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
    
