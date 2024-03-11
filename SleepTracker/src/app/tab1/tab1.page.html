@@ -2,7 +2,7 @@
 <ion-app>
   <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title>
+      <ion-title class="center-title">
         Dashboard
       </ion-title>
     </ion-toolbar>
@@ -15,10 +15,24 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-item [button]="true" (click)="viewLoggedData()">
-      <ion-label>Sleep History</ion-label>
-      <ion-note slot="end">View All<ion-icon></ion-icon>
-      </ion-note>
+  <!-- Average Hours -->
+  <ion-label class="medium-label-bold">Past Week Average Hours</ion-label>
+  <br>
+  <ion-label class="medium-label">{{ averageSleep7Days }}</ion-label>
+
+  <br>
+  <br>
+  <ion-label class="medium-label-bold">Past Week Sleep Logs</ion-label>
+  <!-- Sleep Logs -->
+  <ion-list>
+    <ion-item *ngFor="let sleepLog of weekSleepHistory">
+      <ion-label>{{ sleepLog.dateString() }}</ion-label>
+      <br>
+      <ion-label>{{ sleepLog.summaryString() }}</ion-label>
     </ion-item>
-  </ion-content>
+  </ion-list>
+
+  <!-- View All Sleep History Button -->
+  <ion-button expand="block" (click)="viewLoggedData()" class="view-button">View All Sleep Logs</ion-button>
+</ion-content>
 </ion-app>

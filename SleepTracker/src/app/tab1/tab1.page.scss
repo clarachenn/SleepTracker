@@ -6,3 +6,44 @@ ion-content {
     --color: #333;  
     --ion-item-background: #fff;  
   }
+
+  .header-label {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 20px;
+    margin-bottom: 40px;
+  }
+  
+  .medium-label {
+    font-size: 18px;
+    margin: 20px 20px;
+    margin-bottom: 40px;
+  }
+  
+  .medium-label-bold {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 20px 20px;
+  }
+
+  .large-label {
+    font-size: 24px;
+  }
+  
+ 
+
+  ion-button.view-button {
+    --background: rgb(146, 179, 137);
+    --color: white;
+}
+
+
+  ion-button {
+    font-size: 18px;
+    margin: 40px;  
+}
+  
+.center-title {
+    text-align: center;
+  }
+  

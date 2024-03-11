@@ -19,5 +19,19 @@
     <ion-card-content>
       <p><strong>Sleepiness:</strong> {{ data.summaryString() }}</p>
     </ion-card-content>
+
+    <ion-footer class="card-buttons">
+
+
+      <!-- Share Button -->
+      <ion-button (click)="shareSleepinessData(data)" fill="outline" color="primary" size="small">
+        <ion-icon slot="icon-only" name="share"></ion-icon>
+      </ion-button>
+
+      <!-- Delete Button -->
+      <ion-button (click)="deleteSleepinessData(data)" fill="outline" color="danger" size="small">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    </ion-footer>
   </ion-card>
 </ion-content>

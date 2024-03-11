@@ -3,7 +3,7 @@
 <ion-app>
   <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title>
+      <ion-title class="center-title">
         Sleepiness
       </ion-title>
     </ion-toolbar>
@@ -16,13 +16,15 @@
       </ion-toolbar>
     </ion-header>
   
-  
+
+    <!-- View All Sleepiness History -->
     <ion-item [button]="true" (click)="viewLoggedSleepinessData()">
       <ion-label>Sleepiness History</ion-label>
       <ion-note slot="end">View All<ion-icon></ion-icon>
       </ion-note>
     </ion-item>
   
+      <!-- Sleepiness Log Form -->
     <ion-card class="ion-card-margin">  
       <ion-item class="ion-margin">  
         <ion-label position="stacked" class="ion-header-font">Time</ion-label>
@@ -44,8 +46,11 @@
         
       </ion-card-content>
     </ion-card>
-  
+
+  <!-- Log Sleepiness Button -->
     <ion-button expand="block" (click)="logSleepinessData()" class="log-button">Log Sleepiness</ion-button>
+
+    
   </ion-content>
   
 </ion-app>
