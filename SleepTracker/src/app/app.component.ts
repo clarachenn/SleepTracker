@@ -21,7 +21,7 @@ export class AppComponent {
           title: "SleepTracker Reminder",
           body: "Don't forget to log your sleep!", 
           id: 1,
-          schedule: { on: { hour: 11, minute: 0}, allowWhileIdle: true, every: 'day' }
+          schedule: { on: { hour: 14, minute: 36}, allowWhileIdle: true, every: 'day' }
         }
       ]
     })

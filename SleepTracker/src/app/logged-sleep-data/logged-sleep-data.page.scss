@@ -1,12 +1,21 @@
+ion-content {
+    --ion-background-color: #f4f4f4;  
+}
+
 .sleep-card {
     margin-bottom: 16px;
     display: flex;
     flex-direction: column;
     padding: 20px 8px;
+    padding-top: 10px;
+    background-color: white;
+    border-radius: 10px;
 }
   
 .sleep-card ion-card-header {
-    background-color: #f2f2f2;
+    background-color: rgb(238, 238, 238);
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .sleep-card ion-card-title {
@@ -24,6 +33,8 @@
 .card-buttons {
     display: flex;
     justify-content: flex-end;
+    background-color: rgb(255, 255, 255);
+    box-shadow: none;  
 }
   
   

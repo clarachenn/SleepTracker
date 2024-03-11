@@ -3,7 +3,6 @@ import { OvernightSleepData } from '../data/overnight-sleep-data';
 import { AlertController, NavController } from '@ionic/angular';
 import { SleepService } from '../services/sleep.service';
 import { Share } from '@capacitor/share';
-import { LocalNotifications } from '@capacitor/local-notifications';
 
 
 @Component({
