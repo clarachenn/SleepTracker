@@ -1,20 +1,33 @@
 .sleep-card {
     margin-bottom: 16px;
-  }
+    display: flex;
+    flex-direction: column;
+    padding: 20px 8px;
+}
   
-  .sleep-card ion-card-header {
+.sleep-card ion-card-header {
     background-color: #f2f2f2;
-  }
-  
-  .sleep-card ion-card-title {
+}
+
+.sleep-card ion-card-title {
     font-weight: bold;
-  }
-  
-  .sleep-card ion-card-subtitle {
+}
+
+.sleep-card ion-card-subtitle {
     font-style: italic;
-  }
-  
-  .sleep-card ion-card-content {
+}
+
+.sleep-card ion-card-content {
     padding: 16px;
-  }
+}
+  
+.card-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+  
+  
+.card-content {
+    flex-grow: 1;
+}
   
